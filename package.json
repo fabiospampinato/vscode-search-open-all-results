@@ -1,0 +1,91 @@
+{
+  "name": "vscode-search-open-all-results",
+  "displayName": "Search - Open All Results",
+  "description": "Open all search results at once with a single command.",
+  "icon": "resources/logo-128x128.png",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "out/src/extension.js",
+  "publisher": "fabiospampinato",
+  "activationEvents": [
+    "onCommand:searchOpenAllResults.open"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Search - Open All Results - Configuration",
+      "properties": {
+        "searchOpenAllResults.resultsLimit": {
+          "type": "number",
+          "description": "Maximum number of results to open",
+          "default": 250
+        },
+        "searchOpenAllResults.fileResultsLimit": {
+          "type": "number",
+          "description": "Maximum number of supported results per file",
+          "default": 10
+        },
+        "searchOpenAllResults.delay": {
+          "type": "number",
+          "description": "Delay, in milliseconds, between file openings",
+          "default": 150
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "searchOpenAllResults.open",
+        "title": "Search: Open All Results"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "searchOpenAllResults.open",
+          "when": "searchViewletVisible"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "publish": "vsce publish && npm publish",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "bugs": {
+    "url": "https://github.com/fabiospampinato/vscode-search-open-all-results/issues"
+  },
+  "author": {
+    "name": "Fabio Spampinato",
+    "email": "spampinabio@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabiospampinato/vscode-search-open-all-results.git"
+  },
+  "engines": {
+    "vscode": "^1.15.0"
+  },
+  "keywords": [
+    "vscode",
+    "search",
+    "open",
+    "all",
+    "results",
+    "extension"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.40",
+    "tslint": "^4.4.2",
+    "typescript": "~2.2.0",
+    "vscode": "^1.1.4"
+  }
+}
