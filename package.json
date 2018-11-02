@@ -3,7 +3,7 @@
   "displayName": "Search - Open All Results",
   "description": "Open all search results at once with a single command.",
   "icon": "resources/logo-128x128.png",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "out/extension.js",
   "publisher": "fabiospampinato",
