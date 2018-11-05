@@ -1,7 +1,7 @@
 # Search - Open All Results
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-search-open-all-results/master/resources/logo-128x128.png" alt="Logo">
+	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-search-open-all-results/master/resources/logo.png" width="128" alt="Logo">
 </p>
 
 Open all search results at once with a single command.
