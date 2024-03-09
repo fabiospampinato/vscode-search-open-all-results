@@ -6,7 +6,7 @@
 
 Open all search results at once with a single command.
 
-This extension will loop through all the available search results and open the corrispective files.
+This extension will loop through all the available search results and open the respective files.
 
 There isn't really a proper API for implementing this, therefor the way this works is a bit hacky, you might find some bugs with it. Try to use this on search queries that produce 1, or very few, results per file.
 
@@ -23,28 +23,18 @@ ext install fabiospampinato.vscode-search-open-all-results
 It adds 1 command, available only when the search pane is visible, to the command palette:
 
 ```js
-Search: Open All Results // Open all search results at once
+'Search: Open All Results' // Open all search results at once
 ```
 
 ## Settings
 
 ```js
 {
-  "searchOpenAllResults.resultsLimit": 250, // Maximum number of results to open
+  "searchOpenAllResults.delay": 150, // Delay, in milliseconds, between file openings
   "searchOpenAllResults.fileResultsLimit": 10, // Maximum number of supported results per file
-  "searchOpenAllResults.delay": 150 // Delay, in milliseconds, between file openings
+  "searchOpenAllResults.resultsLimit": 250 // Maximum number of results to open
 }
 ```
-
-## Demo
-
-![Demo](resources/demo.gif)
-
-## Contributing
-
-If you found a problem, or have a feature request, please open an [issue](https://github.com/fabiospampinato/vscode-search-open-all-results/issues) about it.
-
-If you want to make a pull request you can debug the extension using [Debug Launcher](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-debug-launcher).
 
 ## License
 

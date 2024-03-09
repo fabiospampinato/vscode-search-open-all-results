@@ -1,32 +1,35 @@
 
 /* IMPORT */
 
-import * as vscode from 'vscode';
-import Config from './config';
+import vscode from 'vscode';
 
-/* NOOPS DETECTOR */
+/* MAIN */
+
+// This class tries to detect when we might be looping over of the existing results again
 
 class NoopsDetector {
 
-  config; maxKnownFiles; noops;
+  /* VARIABLES */
 
-  constructor () {
+  private limit: number;
+  private maxKnownFiles: number;
+  private noops: number;
 
-    this.config = Config.get ();
-    this.maxKnownFiles = this.getKnownFiles ();
+  /* CONSTRUCTOR */
+
+  constructor ( limit: number ) {
+
+    this.limit = limit;
+    this.maxKnownFiles = vscode.workspace.textDocuments.length;
     this.noops = 0;
 
   }
 
-  getKnownFiles () {
+  /* API */
 
-    return vscode.workspace.textDocuments.length;
+  tick = (): void => {
 
-  }
-
-  iteration () {
-
-    const knownFiles = this.getKnownFiles ();
+    const knownFiles = vscode.workspace.textDocuments.length;
 
     if ( knownFiles > this.maxKnownFiles ) { // Not a noop
 
@@ -35,17 +38,17 @@ class NoopsDetector {
 
     } else { // Noop
 
-      this.noops++;
+      this.noops += 1;
 
     }
 
-  }
+  };
 
-  isLimit () { // Too many noops
+  isLimited = (): boolean => { // Too many noops
 
-    return this.noops > this.config.fileResultsLimit;
+    return this.noops > this.limit;
 
-  }
+  };
 
 }
 
