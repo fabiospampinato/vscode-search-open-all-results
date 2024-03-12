@@ -1,3 +1,6 @@
+### Version 2.0.1
+- Minor internal improvements
+
 ### Version 2.0.0
 - Rewitten: more modern code, no third-party dependencies, 98% smaller bundle
 
