@@ -8,7 +8,7 @@ Open all search results at once with a single command.
 
 This extension will loop through all the available search results and open the respective files.
 
-There isn't really a proper API for implementing this, therefor the way this works is a bit hacky, you might find some bugs with it. Try to use this on search queries that produce 1, or very few, results per file.
+There isn't really a proper API for implementing this, therefore the way this works is a bit hacky and you might find some bugs with it. Try to use this on search queries that produce one, or very few, results per file.
 
 ## Install
 
@@ -20,7 +20,7 @@ ext install fabiospampinato.vscode-search-open-all-results
 
 ## Usage
 
-It adds 1 command, available only when the search pane is visible, to the command palette:
+It adds one command, available only when the search pane is visible, to the command palette:
 
 ```js
 'Search: Open All Results' // Open all search results at once
